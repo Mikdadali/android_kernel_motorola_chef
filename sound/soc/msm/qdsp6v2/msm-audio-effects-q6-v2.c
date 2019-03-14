@@ -272,14 +272,11 @@ int msm_audio_effects_virtualizer_handler(struct audio_client *ac,
 		updt_params += packed_data_size;
 		params_length += packed_data_size;
 	}
-<<<<<<< HEAD
 	if (params_length && (rc == 0))
 		q6asm_set_pp_params(ac, NULL, params, params_length);
-=======
 	if (params_length && !msm_dts_eagle_is_hpx_on() && (rc == 0))
 		q6asm_send_audio_effects_params(ac, params,
 						params_length);
->>>>>>> d384b0ed6b10... sound: DTS-Eagle integration
 	else
 		pr_debug("%s: did not send pp params\n", __func__);
 invalid_config:
